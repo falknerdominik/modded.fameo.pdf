@@ -101,7 +101,7 @@ class Document {
 		$content = $this->render();
 
 		$previousErrorReporting = error_reporting(0);
-		$pdf = new \mPDF();
+		$pdf = new \mPDF('utf-8', 'A4-L');
 		$pdf->WriteHTML($content);
 		$output = $pdf->Output($filename, 'i');
 		error_reporting($previousErrorReporting);
